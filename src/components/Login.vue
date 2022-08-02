@@ -111,6 +111,12 @@ export default defineComponent({
               Login
             </button>
           </div>
+          <div>
+            <p class="text-center">
+              Belum punya akun?
+              <router-link to="/" class="text-sky-400">Register</router-link>
+            </p>
+          </div>
         </form>
       </div>
     </div>

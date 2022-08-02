@@ -9,9 +9,9 @@ export default defineComponent({
   data() {
     return {
       form: {
-        phone: "",
-        password: "",
-        country: "",
+        phone: this.phone,
+        password: this.password,
+        country: this.country,
         latlong: "1",
         device_token: "1",
         device_type: "2",
@@ -19,6 +19,7 @@ export default defineComponent({
       isToastVisible: false,
       errorText: "",
       otpForm: false,
+      otpDataUser: null,
     };
   },
   components: {
@@ -35,17 +36,17 @@ export default defineComponent({
   },
   methods: {
     sentPhone(phone: string) {
+      this.otpForm = false;
       this.phone = phone;
-    },
-    passPhone() {
-      this.$emit("passPhone", this.form.phone);
+      console.log(phone);
     },
     handleSubmitForm() {
+      this.isLoading = true;
       this.register
         .registerAccount(this.form)
         .then(() => {
-          this.otpForm = true;
-          this.passPhone();
+          this.sentPhone();
+
           this.$router.push("/verification");
         })
         .catch((error) => {
@@ -57,6 +58,24 @@ export default defineComponent({
           }, 3000);
         });
     },
+    // handleSubmitForm() {
+    //   this.register
+    //     .registerAccount(this.form)
+    //     .then(() => {
+    //       this.otpForm = true;
+    //       // this.passPhone();
+    //       // console.log(this.passPhone());
+    //       // this.$router.push("/verification");
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //       this.isToastVisible = true;
+    //       this.errorText = "Phone has already been taken";
+    //       setInterval(() => {
+    //         this.isToastVisible = false;
+    //       }, 3000);
+    //     });
+    // },
   },
 });
 </script>
@@ -146,10 +165,15 @@ export default defineComponent({
               Register
             </button>
           </div>
-          <div><p>Sudah punya akun? Login</p></div>
+          <div>
+            <p class="text-center">
+              Sudah punya akun?
+              <router-link to="/login" class="text-sky-400">Login</router-link>
+            </p>
+          </div>
         </form>
       </div>
-      <Otp v-if="otpForm" @pass-phone="sentPhone" />
+      <Otp v-if="otpForm" @pass-phone="sentPhone" :phone="form.phone" />
     </div>
   </div>
 </template>
