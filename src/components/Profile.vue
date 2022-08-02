@@ -17,11 +17,12 @@
           />
         </div>
       </div>
-      <div class="flex">
+      <div class="grid grid-cols-1 md:grid-cols-2">
         <div
-          class="bg-white shadow overflow-hidden sm:rounded-lg w-[400px] mt-10"
+          class="bg-white shadow overflow-hidden sm:rounded-lg lg:w-[500px] md:w-[400px] mt-10"
         >
           <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+            <p class="text-md font-medium mt-[10px] text-center">Profile</p>
             <dl class="sm:divide-y sm:divide-gray-200">
               <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500">Full name</dt>
@@ -56,9 +57,48 @@
         </div>
 
         <div
-          class="bg-white shadow overflow-hidden sm:rounded-lg w-[400px] mt-10 ml-10"
+          class="bg-white shadow overflow-hidden sm:rounded-lg lg:w-[500px] md:w-[400px] mt-10 ml-10"
         >
           <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+            <p class="text-md font-medium mt-[10px] text-center">Career</p>
+            <dl class="sm:divide-y sm:divide-gray-200">
+              <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">Full name</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  Margot Foster
+                </dd>
+              </div>
+              <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                  Application for
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  Backend Developer
+                </dd>
+              </div>
+              <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">Email address</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  margotfoster@example.com
+                </dd>
+              </div>
+              <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                  Salary expectation
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                  $120,000
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div
+          class="bg-white shadow overflow-hidden sm:rounded-lg lg:w-[500px] md:w-[400px] mt-10"
+        >
+          <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+            <p class="text-md font-medium mt-[10px] text-center">Education</p>
             <dl class="sm:divide-y sm:divide-gray-200">
               <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500">Full name</dt>
