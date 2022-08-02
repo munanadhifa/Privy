@@ -12,7 +12,8 @@ export const useLoginStore = defineStore({
         const { data }: any = await postLogin(payload);
         return data;
       } catch (error: any) {
-        throw Error(error);
+        console.log(error.response.data.error.errors[0]);
+        throw Error(error.response.data.error.errors[0]);
       }
     },
   },

@@ -1,8 +1,8 @@
 <script lang="ts">
 import { useLoginStore } from "../stores/login";
+import { defineComponent } from "vue-demi";
 import Toast from "../components/materials/Toast.vue";
 import { useToastStore } from "../stores/toast";
-import { defineComponent } from "vue-demi";
 
 export default defineComponent({
   data() {
@@ -18,7 +18,7 @@ export default defineComponent({
       errorText: "",
     };
   },
-  component: {
+  components: {
     Toast,
   },
   setup() {
@@ -38,15 +38,11 @@ export default defineComponent({
         })
         .catch((error) => {
           console.log(error);
-          const err = JSON.stringify(error);
-          console.log(err);
-          if (err.includes("you need verification phone number")) {
-            this.isToastVisible = true;
-            this.errorText = "you need verification phone number";
-            setInterval(() => {
-              this.isToastVisible = false;
-            }, 3000);
-          }
+          this.isToastVisible = true;
+          this.errorText = error;
+          setInterval(() => {
+            this.isToastVisible = false;
+          }, 9000);
         });
     },
   },

@@ -1,8 +1,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useRegisterStore } from "../stores/register";
-import Toast from "../components/materials/Toast.vue";
 import OTP from "../components/Verification.vue";
+import Toast from "../components/materials/Toast.vue";
 import { useToastStore } from "../stores/toast";
 
 export default defineComponent({
@@ -53,7 +53,7 @@ export default defineComponent({
           this.isToastVisible = true;
           this.errorText = "Phone has already been taken";
           setInterval(() => {
-            this.isToastVisile = false;
+            this.isToastVisible = false;
           }, 3000);
         });
     },
@@ -146,6 +146,7 @@ export default defineComponent({
               Register
             </button>
           </div>
+          <div><p>Sudah punya akun? Login</p></div>
         </form>
       </div>
       <Otp v-if="otpForm" @pass-phone="sentPhone" />
